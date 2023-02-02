@@ -39,7 +39,8 @@ $dbname = getenv("DB_NAME");
 
 
       //$connection = mysqli_connect('localhost','root','','book_db');
-      $connection = new mysqli('localhost', 'root', '', 'laundry_db');
+      //$connection = new mysqli('localhost', 'root', '', 'laundry_db');
+      $connection = new mysqli(getenv('DB_HOST'), getenv('DB_USER'), getenv('DB_PASSWORD'), getenv('DB_NAME'));
       if(isset($_POST['send-pass'])){
         //  $currentPW = $_POST['curr_pass'];
          $newPW = $_POST['new_pass'];
