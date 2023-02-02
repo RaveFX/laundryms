@@ -19,7 +19,8 @@
 <?php
       
 if (isset($_POST['status'])) {
-    $email = $_POST['email'];
+   //  $email = $_POST['email'];
+   $email = htmlspecialchars($_POST['email']);
     echo $email;
 }
    ?>
@@ -34,11 +35,12 @@ if (isset($_POST['status'])) {
       <div class="flex">
       <div class="inputbox">
             <span>Email :</span>
-            <p><h1><?=$email?></h1></p>
+            <p><h1><?=htmlspecialchars($email)?></h1></p>
+            
          </div> 
          <div class="inputBox">
             <span>Email :</span>
-            <input type="email" name="email" value="<?=$email?>">
+            <input type="email" name="email" value="<?=htmlspecialchars($email)?>">
         </div>
         
          <div class="inputBox">
