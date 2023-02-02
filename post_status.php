@@ -1,5 +1,6 @@
 <?php
-      $connection = new mysqli('localhost', 'root', '', 'laundry_db');
+      // $connection = new mysqli('localhost', 'root', '', 'laundry_db');
+      $connection = new mysqli(getenv('DB_HOST'), getenv('DB_USER'), getenv('DB_PASSWORD'), getenv('DB_NAME'));
       if(isset($_POST['send_status'])){
          $statusType = htmlspecialchars($_POST['statusType']);
          $email = htmlspecialchars($_POST['email']);
