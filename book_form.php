@@ -1,6 +1,7 @@
 <?php
       //$connection = mysqli_connect('localhost','root','','book_db');
-      $connection = new mysqli('localhost', 'root', '', 'laundry_db');
+      //$connection = new mysqli('localhost', 'root', '', 'laundry_db');
+      $connection = new mysqli(getenv('DB_HOST'), getenv('DB_USER'), getenv('DB_PASSWORD'), getenv('DB_NAME'));
       if(isset($_POST['send'])){
          $date = htmlspecialchars($_POST['date']);
    $topwear = htmlspecialchars($_POST['topwear']);
