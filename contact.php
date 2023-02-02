@@ -7,5 +7,5 @@
 </b></pre></h1>
 </br>
 <h1><b>Return To Home</b></h1>
-<div class="btn" onclick="location.href='http://localhost/Laundry_Management_System/home.php';">Blitz Cleaners</div>
+<div class="btn" onclick="location.href='http://localhost:998/laundryms/home.php';">Blitz Cleaners</div>
 </center>

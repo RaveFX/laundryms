@@ -27,9 +27,9 @@ if ($result->num_rows > 0) {
    while($row = $result->fetch_assoc()) {
       // echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
       // $nameFromDB =  $row["name"];
-      $emailFromDB = $row["email"];
-      $statusFromDB = $row["status"];
-      $dateFromDB = $row["date"];
+      //$emailFromDB = $row["email"];
+      //$statusFromDB = $row["status"];
+      //$dateFromDB = $row["date"];
       // $phoneFromDB = $row["phone"];
       // $addressFromDB = $row["address"];
       // echo "yessssss";
@@ -92,13 +92,13 @@ if ($result->num_rows > 0) {
 
 
 <section class="home">
-   <div class="status-container">
+   <!-- <div class="status-container">
       <p><h2><center>Order Status</center></h2></p>
       <center>
       <div><h3><I>Email: <?=$emailFromDB?><I></I></h3></div>
       <div><h3>Status: <?=$statusFromDB?><br> On <br> <?=$dateFromDB?></h3></div>
       </center>
-   </div>
+   </div> -->
 
    <div class="swiper home-slider">
 

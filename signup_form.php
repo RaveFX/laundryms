@@ -12,7 +12,7 @@
 
     if($name==null || $email==null || $password==null || $phone==null || $address==null || $securityquestion==null || $securityanswer==null)
     {
-       echo '<script>alert("Fields cannot be empty");location.href="http://localhost/Laundry_Management_System/signup.php";</script>';
+       echo '<script>alert("Fields cannot be empty");location.href="http://localhost:998/laundryms/signup.php";</script>';
     } else{
     $request = " insert into signup_form(name, email, password, phone, address, securityquestion, securityanswer) values('$name','$email', '$password', '$phone','$address','$securityquestion','$securityanswer') ";
          //mysqli_query($connection, $request);
@@ -20,7 +20,7 @@
             //echo'hii';
             //echo'<script>alert("New record created successfully");</script>';
             $_POST = array();
-            echo '<script>alert("Account Created Successfully.Please Login.");location.href="http://localhost/Laundry_Management_System/index.php";</script>';
+            echo '<script>alert("Account Created Successfully.Please Login.");location.href="http://localhost:998/laundryms/index.php";</script>';
 
             } else {
                 echo "Error: " . $request . "<br>" . $connection->error;
@@ -35,5 +35,5 @@
 <link rel="stylesheet" href="css/style.css">
 <!-- <center>
 <h1> Account created successfully.</h1><br>
-<div class="btn" onclick="location.href='http://localhost/Laundry_Management_System/index.php';">Go to Login Page</div>
+<div class="btn" onclick="location.href='http://localhost:998/laundryms/index.php';">Go to Login Page</div>
 </center> -->

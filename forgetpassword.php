@@ -62,11 +62,11 @@
 
     
       <center>
-      <!-- <div class="btn" onclick="location.href='http://localhost/Laundry_Management_System/home.php';">Login</div> -->
+      <!-- <div class="btn" onclick="location.href='http://localhost:998/laundryms/home.php';">Login</div> -->
       <!-- <a href = "forgetpassword.php" class="pass-link">Forgot Password</a>
       <p>Are you an existing user? NO.</p> -->
 
-      <!-- <div class="btn" onclick="location.href='http://localhost/Laundry_Management_System/signup.php';">Sign-up</div> -->
+      <!-- <div class="btn" onclick="location.href='http://localhost:998/laundryms/signup.php';">Sign-up</div> -->
       </center>
    </form>
 
@@ -107,7 +107,7 @@ if(isset($_POST['send'])){
       header('location:recoverPassword.php?url=1');
       // echo '<script>alert("Login Successful")</script>'; //moved this line to home.php
    }else{
-      echo '<script>alert("Login Failed!!.Try Again.");location.href="http://localhost/Laundry_Management_System/forgetpassword.php";</script>';
+      echo '<script>alert("Login Failed!!.Try Again.");location.href="http://localhost:998/laundryms/forgetpassword.php";</script>';
       header('location:forgetpassword.php');
 
    }

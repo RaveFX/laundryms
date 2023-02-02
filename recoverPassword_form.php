@@ -45,14 +45,14 @@ session_start();
             $request = "update signup_form set password ='$newPW' where email ='$emailFromDB'" ;
             if ($connection->query($request)) {
                $_POST = array();
-               echo '<script>alert("Password Updated Successfully.Please Login Again");location.href="http://localhost/Laundry_Management_System/index.php";</script>';
+               echo '<script>alert("Password Updated Successfully.Please Login Again");location.href="http://localhost:998/laundryms/index.php";</script>';
 
             } else {
             echo "Error: " . $request . "<br>" . $connection->error;
             }
             
          } else{
-            echo '<script>alert("Please check your password");location.href="http://localhost/Laundry_Management_System/password.php";</script>';
+            echo '<script>alert("Please check your password");location.href="http://localhost:998/laundryms/password.php";</script>';
         }
       }else{
          echo 'something went wrong please try again!';
@@ -63,7 +63,7 @@ session_start();
 <link rel="stylesheet" href="css/style.css">
 <!-- <center>
 <h1>Booking created successfully,sit back we'll contact you soon.</h1><br>
-<div class="btn" onclick="location.href='http://localhost/Laundry_Management_System/index.php';">Return To Home</div>
+<div class="btn" onclick="location.href='http://localhost:998/laundryms/index.php';">Return To Home</div>
       
 </center> -->
    </html> 

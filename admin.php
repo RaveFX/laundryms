@@ -50,11 +50,11 @@
 
     
       <!-- <center> -->
-      <!-- <div class="btn" onclick="location.href='http://localhost/travel%20website/home.php';">Login</div> -->
+      <!-- <div class="btn" onclick="location.href='http://localhost:998/travel%20website/home.php';">Login</div> -->
 
       <!-- <p>Are you already an user? NO.</p> -->
 
-      <!-- <div class="btn" onclick="location.href='http://localhost/travel%20website/signup.php';">Sign-up</div> -->
+      <!-- <div class="btn" onclick="location.href='http://localhost:998/travel%20website/signup.php';">Sign-up</div> -->
       <!-- </center> -->
    </form>
 
@@ -87,7 +87,7 @@ if(isset($_POST['send'])){
 
       if($select_user->rowCount() > 0){
          $_SESSION['user_id'] = $row['id'];
-         echo '<script>alert("Login Successful");location.href="http://localhost/Laundry_Management_System/dashboard.php";</script>';
+         echo '<script>alert("Login Successful");location.href="http://localhost:998/laundryms/dashboard.php";</script>';
       }else{
          echo '<script>alert("Login Failed");</script>';
       }
