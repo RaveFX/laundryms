@@ -4,10 +4,15 @@
 session_start();
 $emailFromDB =  $_SESSION["user_id"];
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "laundry_db";
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "laundry_db";
+
+$servername = getenv("DB_SERVER");
+$username = getenv("DB_USERNAME");
+$password = getenv("DB_PASSWORD");
+$dbname = getenv("DB_NAME");
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
