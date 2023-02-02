@@ -15,10 +15,20 @@
 </head>
 <body>
    <?php
+   // session_start();
+   // // print_r($_SESSION["user_id"]);
+   // $emailFromDB =  $_SESSION["user_id"];
+   // // echo $emailFromDB;
+   // <?php
    session_start();
    // print_r($_SESSION["user_id"]);
+   if (!isset($_SESSION["user_id"])) {
+      header("Location: login.php");
+      exit;
+   }
    $emailFromDB =  $_SESSION["user_id"];
    // echo $emailFromDB;
+
 
 $servername = "localhost";
 $username = "root";
@@ -29,17 +39,23 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
    die("Connection failed: " . $conn->connect_error);
 }
-
+$emailFromDB =  $_SESSION["user_id"];
+$emailFromDB = mysqli_real_escape_string($conn, $emailFromDB);
 $sql = "SELECT * FROM `signup_form` WHERE email='$emailFromDB'";
+// $sql = "SELECT * FROM `signup_form` WHERE email='$emailFromDB'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
    while($row = $result->fetch_assoc()) {
       // echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-      $nameFromDB =  $row["name"];
-      $phoneFromDB = $row["phone"];
-      $addressFromDB = $row["address"];
+      // $nameFromDB =  $row["name"];
+      // $phoneFromDB = $row["phone"];
+      // $addressFromDB = $row["address"];
+      $nameFromDB =  htmlentities($row["name"]);
+      $phoneFromDB = htmlentities($row["phone"]);
+      $addressFromDB = htmlentities($row["address"]);
+
       // echo "yessssss";
    }
 } else {
