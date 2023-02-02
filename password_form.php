@@ -33,7 +33,8 @@ if ($result->num_rows > 0) {
   echo "0 results";
 }
 
-$connection = new mysqli('localhost', 'root', '', 'laundry_db');
+// $connection = new mysqli('localhost', 'root', '', 'laundry_db');
+$connection = new mysqli(getenv('DB_HOST'), getenv('DB_USER'), getenv('DB_PASSWORD'), getenv('DB_NAME'));
 if(isset($_POST['send-pass'])){
   $currentPW = $_POST['curr_pass'];
   $newPW = $_POST['new_pass'];
