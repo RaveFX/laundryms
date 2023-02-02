@@ -63,7 +63,8 @@
     <div class="box">
         <h2  style="text-transform: none;"> <?php
         echo'<h1>Laundry Requests:<br><br></h1>';
-        $mysqli = new mysqli("localhost","root","","laundry_db");
+      //   $mysqli = new mysqli("localhost","root","","laundry_db");
+      $connection = new mysqli(getenv('DB_HOST'), getenv('DB_USER'), getenv('DB_PASSWORD'), getenv('DB_NAME'));
 
         if ($mysqli -> connect_errno) {
         echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
