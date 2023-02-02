@@ -1,48 +1,32 @@
 <?php
-      //$connection = mysqli_connect('localhost','root','','book_db');
       $connection = new mysqli('localhost', 'root', '', 'laundry_db');
       if(isset($_POST['send_status'])){
-         $statusType = $_POST['statusType'];
-         $email = $_POST['email'];
+         $statusType = htmlspecialchars($_POST['statusType']);
+         $email = htmlspecialchars($_POST['email']);
          
 
          if($email==null and $statusType==null)
          {
             echo '<script>alert("Please Select");location.href="http://localhost:998/laundryms/admin-status.php";</script>';
          } else{
-            // $request = "insert into status_form(email, status) values('$email', '$statusType')";
-            $request = "update signup_form set status ='$statusType' where email ='$email'" ;
+            $request = "UPDATE signup_form SET status = ? WHERE email = ?";
+            $stmt = $connection->prepare($request);
+            $stmt->bind_param("ss", $statusType, $email);
 
-            if ($connection->query($request)) {
+            if ($stmt->execute()) {
                $_POST = array();
                echo '<script>alert("Status Updated.");location.href="http://localhost:998/laundryms/dashboard.php";</script>';
 
-            } else if($connection->error=="Duplicate entry '$email' for key 'PRIMARY'"){
-            $request = "update status_form set status ='$statusType' where email ='$email'" ;
-            if ($connection->query($request)) {
-               $_POST = array();
-               echo '<script>alert("Status Updated Successfully.");location.href="http://localhost:998/laundryms/dashboard.php";</script>';
-
             } else {
-            echo "Error: " . $request . "<br>" . $connection->error;
-            echo '<script>alert("Profile Update Failed.Please try Again");location.href="http://localhost:998/laundryms/admin-status.php";</script>';
-            }
-
-            }
-            else{
-                echo 'nnnnnnnn';
+                echo '<script>alert("Profile Update Failed. Please try Again.");location.href="http://localhost:998/laundryms/admin-status.php";</script>';
             }
          }
-      }else{
-         echo 'something went wrong please try again!';
-      }
+      } else {
+         echo '<script>alert("Something went wrong. Please try again.");location.href="http://localhost:998/laundryms/admin-status.php";</script>';
 
-   ?>
+      }
+      ?>
+
 <html>
 <link rel="stylesheet" href="css/style.css">
-<center>
-<!-- <h1>Booking created successfully,sit back we'll contact you soon.</h1><br>
-<div class="btn" onclick="location.href='http://localhost:998/laundryms/home.php';">Return To Home</div> -->
-
-</center>
-   </html> 
+</html> 
