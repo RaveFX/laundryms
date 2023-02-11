@@ -103,8 +103,8 @@ if(isset($_POST['send'])) {
 ?>
 
 
-<link rel="stylesheet" href="css/style.css">
+<!-- <link rel="stylesheet" href="css/style.css">
 <center>
 <h1> Account created successfully.</h1><br>
 <div class="btn" onclick="location.href='http://localhost:998/laundryms/index.php';">Go to Login Page</div>
-</center> 
+</center>  -->
