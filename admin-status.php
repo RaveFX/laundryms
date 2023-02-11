@@ -18,8 +18,7 @@
 <body>
 <?php
       
-if (isset($_POST['status'])) {
-   //  $email = $_POST['email'];
+if (isset($_POST['status'])) {                               //  $email = $_POST['email']; //xss scripting 
    $email = htmlspecialchars($_POST['email']);
     echo $email;
 }

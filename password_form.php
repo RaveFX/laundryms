@@ -4,7 +4,7 @@
 session_start();
 $emailFromDB =  $_SESSION["user_id"];
 
-// $servername = "localhost";
+// $servername = "localhost"; //use of hardcoded credentials 
 // $username = "root";
 // $password = "";
 // $dbname = "laundry_db";

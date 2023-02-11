@@ -10,7 +10,7 @@
          {
             echo '<script>alert("Please Select");location.href="http://localhost:998/laundryms/admin-status.php";</script>';
          } else{
-            $request = "UPDATE signup_form SET status = ? WHERE email = ?";
+            $request = "UPDATE signup_form SET status = ? WHERE email = ?"; //SQL injection
             $stmt = $connection->prepare($request);
             $stmt->bind_param("ss", $statusType, $email);
 
